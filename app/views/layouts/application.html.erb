@@ -24,38 +24,47 @@
        <ul class="navbar-nav ml-auto">
 
       <% if user_signed_in? %>
-      <li>
-        <%= link_to "Home", root_path %>
-      </li>
 
-       <li>
-        <%= link_to "Users", users_path %>
-      </li>
+        <%= link_to "root_path" do %>
+         <i class="fas fa-home"></i> Home
+        <% end %>
 
-       <li>
-        <%= link_to "Books", books_path %>
-      </li>
 
-      <li>
-        <%= link_to "Log out", destroy_user_session_path %>
-      </li>
+        <%= link_to "users_path" do %>
+         <i class="fas fa-users"></i> Users
+        <% end %>
+
+
+        <%= link_to "books_path" do %>
+         <i class="fas fa-book-open"></i> Books
+        <% end %>
+
+
+        <%= link_to "destroy_user_session_path",method :get do %>
+         <i class="fas fa-sign-out-alt"></i> Log out
+        <% end %>
 
       <% else %>
-      <li>
-        <%= link_to "Home", root_path %>
-      </li>
 
-      <li>
-        <%= link_to "About", about_path %>
-      </li>
+        <%= link_to "root_path" do %>
+         <i class="fas fa-home"></i> Home
+        <% end %>
 
-       <li>
-        <%= link_to "Sign up", new_user_registration_path %>
-      </li>
 
-      <li>
-        <%= link_to "Log in", new_user_session_path %>
-      </li>
+        <%= link_to "about_path" do %>
+        <i class="fas fa-link"></i> About
+         <% end %>
+
+
+        <%= link_to "new_user_registration_path" do %>
+         <i class="fas fa-user-plus"></i> Sign up
+        <% end %>
+
+
+        <%= link_to "new_user_session_path" do %>
+         <i class="fas fa-sign-in-alt"></i> Log in
+        <% end %>
+
       <% end %>
 
        </ul>
