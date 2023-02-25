@@ -1,2 +1,43 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>User info</h1>
+
+<div class="container">
+ <div class="row">
+  
+<table class="table table-stariped">
+ <thead>
+  <tr>
+   <th>name</th>
+   <th>introduction</th>
+   <th colspa="2"></th>
+  </tr>
+ </thead>
+ 
+<tbody>
+ <% @books.each do |book| %>
+  <tr>
+    <td><%= book.name %></td>
+    <td><%= book.introduction %></td>
+　</tr>
+ <% end %>
+</tbody>
+</table>
+ </div>
+ </div>
+</div>
+<br>
+
+<%= link_to 'create', new_book_path, class: "btn btn-secondary" %>
+
+
+<h2>New Book</h2>
+<%= form_with model: Book.new do |f| %>
+ <h4>Title</h4>
+ <%= f.text_field :title %>
+
+ <h4>Opnion</h4>
+ <%= f.text_area :body %>
+
+<p><%= f.submit 'Create Book' %></p>
+<% end %>
