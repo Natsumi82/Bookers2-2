@@ -5,7 +5,7 @@
 <div class="container">
  <div class="row">
 
-<table class="table table-stariped">
+<table class="table table-bordered">
  <thead>
   <tr>
    <th>name</th>
@@ -15,10 +15,9 @@
  </thead>
 
 <tbody>
- <% @books.each do |book| %>
+ <% @books.each do |user| %>
   <tr>
-    <td><%= book.name %></td>
-    <td><%= book.introduction %></td>
+    <td><%= user.name %></td>
 　</tr>
  <% end %>
 </tbody>
@@ -28,7 +27,9 @@
 </div>
 <br>
 
-<%= link_to 'f4fe', new_book_path, class: "btn btn-secondary" %>
+  <%= link_to  user_registration_path ,class: "btn btn-light btn-block", method: :get do %>
+   <i class="fas fa-user-cog"></i>
+  <% end %>
 
 
 <h2>New Book</h2>
@@ -39,5 +40,6 @@
  <h4>Opnion</h4>
  <%= f.text_area :body %>
 
-<p><%= f.submit 'Create Book' %></p>
+ <p><%= link_to 'Create book', new_book_path, class: "btn btn-success" %></p>
+
 <% end %>

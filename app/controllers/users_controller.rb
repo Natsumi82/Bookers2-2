@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+   @users = User.all
   end
 
   def show
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def destroy
@@ -16,4 +18,7 @@ class UsersController < ApplicationController
    redirect_to root_url
   end
 
+private
+ def user_params
+    params.require(:user).permit(:name, :introduction, :image)  end
 end
