@@ -13,12 +13,20 @@ class UsersController < ApplicationController
   end
 
   def destroy
-   session.delete(:user_id)
-   @current_user = nil
-   redirect_to root_url
+   book = Book.find(params[:id])
+   book.destroy
+   redirect_to users_path
   end
 
+  def update
+   book = User.find(params[:id])
+   book.update(user_params)
+   radirect_to user_path(user.id)
+  end
+  
 private
+
  def user_params
+    params.require(:book).permit(:title, :body, :image)
     params.require(:user).permit(:name, :introduction, :image)  end
 end

@@ -1,0 +1,10 @@
+<div>
+  <h3><%= @book.name %></h3>
+  <%= image_tag @book.get_profile_image(100,100) %>
+     <% if @book == current_book.id %>
+  <p><%= link_to "プロフィール編集",edit_book_path(@book) %></p>
+  <% end %>
+  </div>
+
+<%= link_to "Edit", edit_book_path(@book.id) %>
+<%= link_to "destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
