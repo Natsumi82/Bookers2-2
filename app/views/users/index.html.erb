@@ -15,19 +15,18 @@
   </tr>
   <tr>
    <th>introduction</th>
-   <th></th>
+   <th><%= user.introduction %></th>
   </tr>
   <% end %>
 
  </tbody>
 </table>
  </div>
- </div>
 </div>
 <br>
 
  <div class="row">
-  <%= link_to  user_registration_path ,class:"btn btn-outline-secondary btn-block", method: :patch do %>
+  <%= link_to  edit_user_password_path ,class: "btn btn-outline-secondary btn-block", method: :get do %>
    <i class="fas fa-user-cog"></i>
   <% end %>
  </div>

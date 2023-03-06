@@ -1,53 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<h1>User info</h1>
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <div class="container">
- <div class="row">
-
-<table class="table table-bordered">
- <thead>
-  <tr>
-   <th>name</th>
-   <th>introduction</th>
-   <th colspa="2"></th>
-  </tr>
- </thead>
-
-<tbody>
- <% @books.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-　</tr>
+<div class="row">
+ <% if @book.errors.any? %>
+  <%= @book.errors.count %>
+   error prohibited this book from being saved:<br>
+  <%= @book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
  <% end %>
-</tbody>
-</table>
- </div>
+<div class="col-md-3">
+ <%= render 'users/user_show', user: @user %>
+ <%= render 'books/book_new', book: @book %>
+</div>
+
+<div class="col-md-8 offset-md-1 pt-3">
+ <% render 'books/book_index', books: @books %>
  </div>
 </div>
-<br>
-
-  <%= link_to  user_registration_path ,class: "btn btn-light btn-block", method: :get do %>
-   <i class="fas fa-user-cog"></i>
-  <% end %>
-
-
-<h2>New Book</h2>
-<%= form_with model: Book.new do |f| %>
- <h4>Title</h4>
- <%= f.text_field :title %>
-
- <h4>Opnion</h4>
- <%= f.text_area :body %>
-
- <p><%= link_to 'Create book', new_book_path, class: "btn btn-success" %></p>
-
-<% end %>

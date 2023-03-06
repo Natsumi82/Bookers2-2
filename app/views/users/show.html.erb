@@ -1,4 +1,7 @@
 <div>
+  <%= form_with model: @user do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+
   <h3><%= @user.name %></h3>
   <%= image_tag @user.get_profile_image(100,100) %>
      <% if @user == current_user.id %>
