@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 before_action :authenticate_user!
-bofore_action :ensure_correct_user, only:[:edit]
+before_action :ensure_correct_user, only:[:edit]
 
   def new
     @book = Book.new

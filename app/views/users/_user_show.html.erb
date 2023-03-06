@@ -1,5 +1,4 @@
 <h1>User info</h1>
- <%= attachment_image_tag book.user, :profile_image, :fill, 100, 100, format: 'jpg', fallback: "no_image.jpg" %>
 
 <table class="table">
  <% @books.each do |book| %>
@@ -13,6 +12,7 @@
    <th><%= user.introduction %></th>
   </tr>
  </tbody>
+ <% end %>
 </table>
 
 <div class="row">
