@@ -1,35 +1,50 @@
-<h2>New Book</h2>
-<%= form_with model: Book.new do |f| %>
- <h4>Title</h4>
- <%= f.text_field :title %>
+<p id="notice"></p>
+<div class="container">
+<div class= "row">
+<div class="col-md-3">
 
- <h4>Opnion</h4>
- <%= f.text_area :body %>
+ <%= render 'users/list', user: @userz %>
+ <%= render 'books/list', book: @book_new %>
 
-<%= link_to 'Create Book', new_book_path, class: "btn btn-success" %>
+</div>
 
-<div class="col-md-8 offset-md-1">
-<h2>Book detail</h2>
-<table class="table">
+<div class ="col-md-8 offset-md-1">
+<table class="table-striped">
+ <h4>Book detail</h4>
+ <table class="table">
+  <tbody>
+   <tr>
+    <td>
+    <%= link_to user_path(@book.user) do%>
+    <p>  </p>
+    <p><%= @book.user.name %></p>
+    <%end%>
+    </td>
 
- <% @books.each do |book| %>
- <tbody>
-  <tr>
-   <th><%= user.name %></th>
-  </tr>
-  <tr>
+    <td>
+    <%= link_to book_path(@book) do %>
+    <%= @book.title %>
+    <%end%>
+    </td>
 
-   <th></th>
+    <td>
+     <%= @book.body %>
+    </td>
+     <% if @book.user == current_user %>
 
-  </tr>
-  <% end %>
-<%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to "destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+     <td>
+     <%= link_to "Edit",edit_book_path(@book.id),class:"btn btn-sm btn-success" %>
+     </td>
 
- </tbody>
+     <td>
+     <%= link_to "Destroy",book_path, method: :delete, data: {confirm: "本当に消しますか？"},class:"btn btn-sm btn-danger" %>
+     </td>
+     <% end %>
+    </tr>
+   </tbody>
+  </table>
+ </div>
 </table>
-
- <% if @book.user == current_user %>
-    <%= link_to "destroy", book_path(@book), method: :delete %>
-  <% end %>
+</div>
+</div>
 </div>

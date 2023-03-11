@@ -1,5 +1,14 @@
-<h2>New Book</h2>
+<% if @user.errors.any? %>
+  <div class="errors" >
+   <h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
+  <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+   </div>
+<% end %>
 
+
+<h1>New Book</h1>
 <%= form_with model: @book do |f| %>
 <div class= "form-group">
  <%= f.label :title, 'Title' %>
