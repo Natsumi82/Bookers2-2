@@ -23,7 +23,7 @@
        <div class="form-group",name="user[profile_image]">
        <label for="inputImage">Image</label>
        <div> <%= f.file_field :profile_image, placeholder: "ファイルを選択", accept: "image/*" %></div>
-        <% if @user.image.attached? %>
+        <% if @user.profile_image.attached? %>
         <%= image_tag @user.image, size: "30x30" %>
         <% else %>
         <%= image_tag 'no_image', size: "30x30" %>

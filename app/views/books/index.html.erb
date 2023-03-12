@@ -28,9 +28,10 @@
     <th colspan="3"></th>
     </tr>
     </thead>
+
+   <tbody>
     <% @books.each do |book| %>
-  <tbody>
-   <tr>
+    <tr>
     <td>
      <%= link_to user_path(book.user) do %>
 
