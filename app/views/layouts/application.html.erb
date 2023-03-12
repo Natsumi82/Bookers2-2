@@ -26,7 +26,7 @@
 
       <% if user_signed_in? %>
 
-        <%= link_to users_path(current_user.id), class: "btn btn-dark text-white text-left", method: :get do %>
+        <%= link_to user_path(current_user.id), class: "btn btn-dark text-white text-left", method: :get do %>
          <i class="fas fa-home"></i> Home
         <% end %>
 
@@ -90,4 +90,5 @@
   </footer>
 
 </body>
+
 </html>

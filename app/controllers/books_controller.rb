@@ -10,8 +10,9 @@ before_action :ensure_correct_user, only:[:edit, :update, :destroy]
     @book = Book.new(book_params)
     @book.user_id = current_user.id
      if @book.save
-  　 　 redirect_to book_path(@book), notice: "You have created book successfully."
-     else
+      flash[:notice] = "You have created book successfully."
+  　 　 redirect_to book_path(@book)
+  　 else
  　    @user = current_user
       @books = @user.books
       render :index
@@ -43,8 +44,8 @@ before_action :ensure_correct_user, only:[:edit, :update, :destroy]
    @book = Book.find(params[:id])
    @book.user_id = current_user.id
      if @book.update(book_params)
-      redirect_to book_path(@book), notice: "You have updated book successfully."
-     else
+       flash[:notice] = "You have created book successfully."
+      redirect_to book_path(@book)
       render :edit
      end
   end
