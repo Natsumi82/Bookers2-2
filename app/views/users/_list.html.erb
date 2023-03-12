@@ -17,10 +17,15 @@
        <tr>
         <th>introduction</th>
         <th><%= user&.introduction %></th>
+        <tr>
+        <th><%= link_to books_path, class: "btn btn-outline-secondary btn-block", method: :get do %>
+         <i class="fas fa-user-cog"></i></th>
+        <% end %>
         </tr>
+
    </tbody>
  </table>
  <table>
-   
+
 
  </table>

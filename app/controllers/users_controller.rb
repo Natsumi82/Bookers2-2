@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
  before_action :authenticate_user!
- before_action :ensure_correct_user, only:[:edit, :update]
+ before_action :correct_user, only:[:edit, :update]
 
   def index
    @users = User.all
@@ -20,10 +20,13 @@ class UsersController < ApplicationController
   def create
    @book = Book.new(book_params)
    @book.user_id = current_user.id
-   if @book.save
-    redirect_to book_path(@book)
+
+   if @user.save
+    flash[:success] = 'Welcome! You have signed up successfully.'
+    redirect_to login_path
    else
-    render :index
+    flash.now[:danger] = "errors prohibited this obj from being saved:"
+    render :new
    end
   end
 
@@ -47,10 +50,10 @@ class UsersController < ApplicationController
 private
 
  def user_params
-  params.require(:user).permit(:name, :introduction, :profile_image_id)
+  params.require(:user).permit(:name, :introduction, :profile_image)
  end
 
- def ensure_correct_user
+ def correct_user
   @user = User.find(params[:id])
   unless @user == current_user
    redirect_to user_path(current_user)

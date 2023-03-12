@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 before_action :authenticate_user!
-before_action :ensure_correct_user, only:[:edit, :update, :destroy]
+before_action :correct_user, only:[:edit, :update, :destroy]
 
   def new
     @book = Book.new
@@ -11,7 +11,7 @@ before_action :ensure_correct_user, only:[:edit, :update, :destroy]
     @book.user_id = current_user.id
      if @book.save
       flash[:notice] = "You have created book successfully."
-  　 　 redirect_to book_path(@book)
+  　 　 redirect_to book_path(@book.id)
   　 else
  　    @user = current_user
       @books = @user.books
@@ -41,13 +41,13 @@ before_action :ensure_correct_user, only:[:edit, :update, :destroy]
   end
 
   def update
-   @book = Book.find(params[:id])
-   @book.user_id = current_user.id
-     if @book.update(book_params)
-       flash[:notice] = "You have created book successfully."
-      redirect_to book_path(@book)
-      render :edit
-     end
+  @book = Book.find(params[:id])
+    if  @book.update(book_params)
+     flash[:notice] = "Book was successfully updated."
+     redirect_to book_path(@book.id)
+    else
+     render :edit
+    end
   end
 
   private
@@ -56,11 +56,10 @@ before_action :ensure_correct_user, only:[:edit, :update, :destroy]
     params.require(:book).permit(:title, :body)
    end
 
-   def ensure_correct_user
-     @book = Book.find(params[:id])
-     unless @book.user == current_user
-       redirect_to books_path
-     end
-   end
+  def correct_user
+   @book = Book.find(params[:id])
+   @user = @book.user
+   redirect_to(books_path) unless @user == current_user
+  end
 
 end

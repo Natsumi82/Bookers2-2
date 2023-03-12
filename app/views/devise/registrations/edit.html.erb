@@ -34,6 +34,18 @@
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
+
+ <div class="form-row pb-3">
+   <div class="col-12">
+    <%= f.label :profile_image, "プロフィール画像", class:"" %>
+   </div>
+   <div class="col-12 text-center pb-2">
+   <%= render "users/profile_image", user: @user %>
+   </div>
+   <div class="col-12 text-center pb-3">
+   <%= f.file_field :profile_image, class:"btn btn-sm" %>
+   </div>
+   </div>
 <% end %>
 
 <h3>Cancel my account</h3>
