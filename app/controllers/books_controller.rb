@@ -11,10 +11,11 @@ before_action :correct_user, only:[:edit, :update, :destroy]
     @book.user_id = current_user.id
      if @book.save
       flash[:notice] = "You have created book successfully."
-  　 　 redirect_to book_path(@book.id)
+  　 　 redirect_to current_user.id
   　 else
- 　    @user = current_user
-      @books = @user.books
+      @user = current_user
+      @books = Book.all
+       flash[:danger] = 'errors prohibited this user from being saved:'
       render :index
      end
   end
