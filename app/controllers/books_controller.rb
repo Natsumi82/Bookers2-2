@@ -11,19 +11,18 @@ before_action :correct_user, only:[:edit, :update, :destroy]
     @book.user_id = current_user.id
      if @book.save
       flash[:notice] = "You have created book successfully."
-  　 　 redirect_to current_user.id
+  　 　 redirect_to book_path(@book.id)
   　 else
-      @user = current_user
       @books = Book.all
-       flash[:danger] = 'errors prohibited this user from being saved:'
+      @user = current_user
       render :index
      end
   end
 
   def index
     @books = Book.all
-    @user = current_user
     @book = Book.new
+    @user = current_user
   end
 
   def show
@@ -36,8 +35,8 @@ before_action :correct_user, only:[:edit, :update, :destroy]
   end
 
   def destroy
-    @book = Book.find(params[:id])
-    @book.destroy
+    book = Book.find(params[:id])
+    book.destroy
     redirect_to books_path, alert: 'Destroy'
   end
 

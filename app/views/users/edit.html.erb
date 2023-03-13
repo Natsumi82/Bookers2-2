@@ -23,11 +23,12 @@
        <div class="form-group",name="user[profile_image]">
        <label for="inputImage">Image</label>
        <div> <%= f.file_field :profile_image, placeholder: "ファイルを選択", accept: "profile_image/*" %></div>
-        <% if @user.profile_image.attached? %>
-        <%= profile_image_tag @user.profile_image, size: "30x30" %>
-        <% else %>
-        <%= profile_image_tag 'no_image', size: "30x30" %>
-        <% end %>
+        <div class="col-12 text-center pb-2">
+        <%= render "users/profile_image", user: @user %>
+        </div>
+         <div class="col-12 text-center pb-3">
+          <%= f.file_field :profile_image, class:"btn btn-sm" %>
+         </div>
        </div>
 
         <div class="form-group", name="user[introduction]">
@@ -36,7 +37,7 @@
         </div>
 
         <div class="form-group">
-          <div><%= f.submit 'Create Book', class: 'btn btn-success' %></div>
+          <%= f.submit  class: 'btn btn-success'%>
          </div>
       <% end %>
       </div>
