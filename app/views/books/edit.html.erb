@@ -1,4 +1,4 @@
-<h4>Editing Book</h4>
+<h2>Editing Book</h2>
 <% if @book.errors.any? %>
   <%= @book.errors.count %>errors prohibited this book from being saved:
   <ul>
@@ -23,4 +23,3 @@
      <%= link_to "Back", books_path %>
   <% end %>
 </div>
-

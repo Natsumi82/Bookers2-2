@@ -7,20 +7,19 @@
 <div class= "row">
 <div class="col-md-3">
 
- <%= render 'users/list', user: @userz %>
+ <%= render 'users/list', user: @user %>
  <%= render 'books/list', book: @book_new %>
-
 </div>
 
 <div class ="col-md-8 offset-md-1">
 <table class="table-striped">
- <h4>Book detail</h4>
+ <h2>Book detail</h2>
  <table class="table">
   <tbody>
    <tr>
     <td>
+    <%= image_tag @user.get_profile_image(100,100) %>
     <%= link_to user_path(@book.user) do%>
-    <p>  </p>
     <p><%= @book.user.name %></p>
     <%end%>
     </td>
@@ -41,14 +40,15 @@
      </td>
 
      <td>
-     <%= link_to "Destroy",book_path, method: :delete, data: {confirm: "本当に消しますか？"},class:"btn btn-sm btn-danger" %>
+     <%= link_to "Destroy",book_path(@book.id), method: :delete, data: {confirm: "本当に消しますか？"},class:"btn btn-sm btn-danger" %>
      </td>
      <% end %>
     </tr>
-   </tbody>
-  </table>
+    </tbody>
+    </table>
+    </div>
+ </table>
  </div>
-</table>
-</div>
-</div>
-</div>
+ </div>
+ </div>
+

@@ -25,41 +25,31 @@
   <ul class="navbar-nav ml-auto">
 
   <% if user_signed_in? %>
-
    <%= link_to user_path(current_user.id), class: "btn btn-dark text-white text-left", method: :get do %>
     <i class="fas fa-home"></i> Home
    <% end %>
-
    <%= link_to users_path, class:  "btn btn-dark text-white  text-left", method: :get do %>
     <i class="fas fa-users"></i> Users
    <% end %>
-
    <%= link_to books_path, class: "btn btn-dark text-white  text-left", method: :get do %>
     <i class="fas fa-book-open"></i> Books
    <% end %>
-
    <%= link_to  destroy_user_session_path, class: "btn btn-dark text-white  text-left", method: :get do %>
     <i class="fas fa-sign-out-alt"></i> Log out
    <% end %>
-
    <% else %>
-
    <%= link_to root_path, class: "btn btn-dark text-white  text-left", method: :get do %>
     <i class="fas fa-home"></i> Home
    <% end %>
-
    <%= link_to home_about_path, class: "btn btn-dark text-white  text-left", method: :get do %>
     <i class="fas fa-link"></i> About
    <% end %>
-
    <%= link_to new_user_registration_path, class: "btn btn-dark text-white  text-left", method: :get do %>
     <i class="fas fa-user-plus"></i> Sign up
    <% end %>
-
    <%= link_to new_user_session_path, class: "btn btn-dark text-white  text-left", method: :get do %>
     <i class="fas fa-sign-in-alt"></i> Log in
    <% end %>
-
   <% end %>
 
    </ul>
