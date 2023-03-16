@@ -10,6 +10,8 @@ before_action :correct_user, only:[:edit, :update, :destroy]
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
+    @user = current_user
+    @books = Book.all
      if @book.save
       flash[:notice] = "You have created book successfully."
       redirect_to book_path(@book.id)
