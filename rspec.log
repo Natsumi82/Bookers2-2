@@ -237,10 +237,10 @@ Userモデルのテスト
 [32m        投稿の編集リンクが表示されない[0m
 [32m        投稿の削除リンクが表示されない[0m
       サイドバーの確認
-[31m        他人の名前と紹介文が表示される (FAILED - 5)[0m
-[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 6)[0m
-[31m        自分の名前と紹介文は表示されない (FAILED - 7)[0m
-[31m        自分のユーザ編集画面へのリンクは存在しない (FAILED - 8)[0m
+[32m        他人の名前と紹介文が表示される[0m
+[32m        他人のユーザ編集画面へのリンクが存在する[0m
+[32m        自分の名前と紹介文は表示されない[0m
+[32m        自分のユーザ編集画面へのリンクは存在しない[0m
     他人の投稿編集画面
 [32m      遷移できず、投稿一覧画面にリダイレクトされる[0m
     他人のユーザ詳細画面のテスト
@@ -295,8 +295,8 @@ Failures:
      [31m[0m
      [31mActionView::Template::Error:[0m
      [31m  undefined method `get_profile_image' for nil:NilClass[0m
-     [36m# ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___14093632332591732_24520'[0m
-     [36m# ./app/views/books/index.html.erb:16:in `_app_views_books_index_html_erb___2278228666887864065_28500'[0m
+     [36m# ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___3691001592087568788_24520'[0m
+     [36m# ./app/views/books/index.html.erb:16:in `_app_views_books_index_html_erb__2419039068463810547_28500'[0m
      [36m# ./app/controllers/books_controller.rb:17:in `create'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7.2/lib/action_text/rendering.rb:20:in `with_renderer'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7.2/lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'[0m
@@ -345,15 +345,15 @@ Failures:
      [36m# --- Caused by: ---[0m
      [36m# NoMethodError:[0m
      [36m#   undefined method `get_profile_image' for nil:NilClass[0m
-     [36m#   ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___14093632332591732_24520'[0m
+     [36m#   ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___3691001592087568788_24520'[0m
 
   3) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿一覧画面を表示している
      [31mFailure/Error: <%= image_tag @user.get_profile_image(100,100) %>[0m
      [31m[0m
      [31mActionView::Template::Error:[0m
      [31m  undefined method `get_profile_image' for nil:NilClass[0m
-     [36m# ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___14093632332591732_24520'[0m
-     [36m# ./app/views/books/index.html.erb:16:in `_app_views_books_index_html_erb___2278228666887864065_28500'[0m
+     [36m# ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___3691001592087568788_24520'[0m
+     [36m# ./app/views/books/index.html.erb:16:in `_app_views_books_index_html_erb__2419039068463810547_28500'[0m
      [36m# ./app/controllers/books_controller.rb:17:in `create'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7.2/lib/action_text/rendering.rb:20:in `with_renderer'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7.2/lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'[0m
@@ -401,15 +401,15 @@ Failures:
      [36m# --- Caused by: ---[0m
      [36m# NoMethodError:[0m
      [36m#   undefined method `get_profile_image' for nil:NilClass[0m
-     [36m#   ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___14093632332591732_24520'[0m
+     [36m#   ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___3691001592087568788_24520'[0m
 
   4) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される
      [31mFailure/Error: <%= image_tag @user.get_profile_image(100,100) %>[0m
      [31m[0m
      [31mActionView::Template::Error:[0m
      [31m  undefined method `get_profile_image' for nil:NilClass[0m
-     [36m# ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___14093632332591732_24520'[0m
-     [36m# ./app/views/books/index.html.erb:16:in `_app_views_books_index_html_erb___2278228666887864065_28500'[0m
+     [36m# ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___3691001592087568788_24520'[0m
+     [36m# ./app/views/books/index.html.erb:16:in `_app_views_books_index_html_erb__2419039068463810547_28500'[0m
      [36m# ./app/controllers/books_controller.rb:17:in `create'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7.2/lib/action_text/rendering.rb:20:in `with_renderer'[0m
      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7.2/lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'[0m
@@ -457,30 +457,10 @@ Failures:
      [36m# --- Caused by: ---[0m
      [36m# NoMethodError:[0m
      [36m#   undefined method `get_profile_image' for nil:NilClass[0m
-     [36m#   ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___14093632332591732_24520'[0m
+     [36m#   ./app/views/users/_list.html.erb:10:in `_app_views_users__list_html_erb___3691001592087568788_24520'[0m
 
-  5) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人の名前と紹介文が表示される
-     [31mFailure/Error: expect(page).to have_content other_user.introduction[0m
-     [31m  expected to find text "1wrnc4svo5nvjhaoxj14" in "Bookers\nHome Users Books Log out\nUser info\nname x1gq09zmvm introduction wdqqwmrdvj95dt6j5bak\nNew book\nTitle\nOpinion\n　\nBook detail\nx0d3oevpet\nxotem wptht7ybfdnkth9gfx24\nCopyRight Infratop.inc"[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:245:in `block (5 levels) in <main>'[0m
-
-  6) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
-     [31mFailure/Error: expect(page).to have_link '', href: edit_user_path(other_user)[0m
-     [31m  expected to find link "" with href "/users/1/edit" but there were no matches[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:248:in `block (5 levels) in <main>'[0m
-
-  7) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分の名前と紹介文は表示されない
-     [31mFailure/Error: expect(page).not_to have_content user.name[0m
-     [31m  expected not to find text "ic1m5ov27b" in "Bookers\nHome Users Books Log out\nUser info\nname ic1m5ov27b introduction zi9x0ml6cr8qdzvaazg7\nNew book\nTitle\nOpinion\n　\nBook detail\nqiyb1bbuql\nexd9w mq5l9dd7a22eweid1dzo\nCopyRight Infratop.inc"[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:251:in `block (5 levels) in <main>'[0m
-
-  8) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない
-     [31mFailure/Error: expect(page).not_to have_link '', href: edit_user_path(user)[0m
-     [31m  expected not to find visible link "" with href "/users/2/edit", found 1 match: ""[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:255:in `block (5 levels) in <main>'[0m
-
-Finished in 29.31 seconds (files took 3.86 seconds to load)
-[31m199 examples, 8 failures[0m
+Finished in 28.05 seconds (files took 1.4 seconds to load)
+[31m199 examples, 4 failures[0m
 
 Failed examples:
 
@@ -488,8 +468,4 @@ Failed examples:
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:131[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿が保存されない[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:134[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿一覧画面を表示している[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:144[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:243[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人の名前と紹介文が表示される[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:247[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:250[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分の名前と紹介文は表示されない[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:254[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない[0m
 
